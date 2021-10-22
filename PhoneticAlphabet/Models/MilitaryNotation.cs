@@ -11,7 +11,7 @@ namespace PhoneticAlphabet.Models
         {
             abc = new Dictionary<char, string>
             {
-                { 'a', "Alfa" },
+                { 'a', "Alpha" },
                 { 'b', "Bravo" },
                 { 'c', "Charlie" },
                 { 'd', "Delta" },
