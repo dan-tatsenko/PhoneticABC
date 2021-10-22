@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@addTagHelper "*, Microsoft.AspNetCore.Mvc.TagHelpers"
+@model List<string>
+@{
+    ViewData["Title"] = "Main";
+    Layout = "_Layout";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Website helps to spell words with military phonetic alphabet</p>
+    <form asp-action="Post" asp-controller="Home">
+        <p>
+            <input name="message" class="form-control" placeholder="Enter message here" />
+        </p>
+        <p>
+            <button type="submit" class="btn btn-primary">Get phonetic notation</button>
+        </p>
+    </form>
+
+    @if (Model != null)
+    {
+        <table class="table table-hover">
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr><td>@item</td></tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
